@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio muhammad fikri ramadhan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .steam-clock {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 220px;
+    padding: 15px;
+    background: linear-gradient(
+        135deg,
+        rgba(26,26,26,0.95),
+        rgba(10,25,47,0.95)
+    );
+    border: 3px solid var(--copper);
+    box-shadow:
+        0 0 15px rgba(0,212,255,0.3),
+        inset 0 0 10px rgba(0,212,255,0.1);
+    text-align: center;
+    z-index: 999;
+}
+
+.steam-clock::before {
+    content: "⚙";
+    position: absolute;
+    top: -18px;
+    left: -15px;
+    font-size: 2rem;
+    color: var(--brass);
+    animation: spin 8s linear infinite;
+}
+
+.clock-title {
+    color: var(--brass);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+#clock {
+    font-size: 1.8rem;
+    color: var(--gear-blue);
+    text-shadow: 0 0 10px var(--gear-blue);
+    margin-bottom: 8px;
+}
+
+#date {
+    color: #d1d1d1;
+    font-size: 0.75rem;
+}
+        :root {
+            --gear-blue: #00d4ff;
+            --deep-blue: #0a192f;
+            --copper: #b87333;
+            --brass: #e1ad21;
+            --dark-metal: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--deep-blue);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
+                linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            color: #d1d1d1;
+            font-family: 'Special Elite', cursive;
+            margin: 0;
+            border: 10px solid var(--copper);
+            border-image: linear-gradient(45deg, var(--copper), var(--brass), var(--copper)) 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            border-bottom: 3px double var(--gear-blue);
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--gear-blue);
+            text-shadow: 2px 2px 0px var(--dark-metal), 0 0 15px var(--gear-blue);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        nav {
+            background: var(--dark-metal);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--brass);
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--brass);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gear-blue);
+            text-shadow: 0 0 10px var(--gear-blue);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--gear-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ornamen Roda Gigi (Gears) Animasi */
+        section::after {
+            content: '⚙';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(0, 212, 255, 0.05);
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h2 {
+            color: var(--brass);
+            border-bottom: 1px solid var(--brass);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 2px solid var(--copper);
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), transparent);
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            border-color: var(--gear-blue);
+            box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        .project-card h3 {
+            color: var(--gear-blue);
+            margin-top: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid var(--brass);
+            color: var(--brass);
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--brass);
+            color: var(--dark-metal);
+            box-shadow: 0 0 10px var(--brass);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 3px double var(--gear-blue);
+            background: var(--dark-metal);
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+        }
+        .steam-clock.scrolling {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 30px rgba(0,212,255,0.7),
+        inset 0 0 20px rgba(0,212,255,0.3);
+    border-color: var(--gear-blue);
+    transition: all 0.3s ease;
+}
+
+.steam-clock.scrolling::before {
+    animation: spin 1s linear infinite;
+}
+@keyframes machineShake {
+    0% { transform: scale(1.08) rotate(0deg); }
+    25% { transform: scale(1.08) rotate(-1deg); }
+    50% { transform: scale(1.08) rotate(1deg); }
+    75% { transform: scale(1.08) rotate(-1deg); }
+    100% { transform: scale(1.08) rotate(0deg); }
+}
+
+.steam-clock.scrolling {
+    animation: machineShake 0.3s ease;
+}
+.steam-clock {
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.steam-clock.scrolling {
+    transform: scale(1.05);
+    border-color: var(--gear-blue);
+    box-shadow:
+        0 0 25px rgba(0,212,255,0.5),
+        inset 0 0 15px rgba(0,212,255,0.15);
+}
+.org-card{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.org-card img{
+    width:250px;
+    border:3px solid var(--copper);
+    box-shadow:0 0 15px rgba(0,212,255,0.3);
+    transition:0.4s;
+}
+
+.org-card img:hover{
+    transform:scale(1.03);
+    border-color:var(--gear-blue);
+}
+
+.org-content{
+    flex:1;
+}
+
+.org-content h3{
+    color:var(--gear-blue);
+    margin-top:0;
+}
+
+@media(max-width:600px){
+    .org-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .org-card img{
+        width:100%;
+        max-width:300px;
+    }
+}
+    </style>
+</head>
+<div class="steam-clock">
+    <div class="clock-title">⚙ WAKTU MESIN ⚙</div>
+    <div id="clock">00:00:00</div>
+    <div id="date">Memuat tanggal...</div>
+</div>
+<script>
+function updateClock() {
+    const now = new Date();
+
+    const time = now.toLocaleTimeString('id-ID');
+    const date = now.toLocaleDateString('id-ID', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+
+    document.getElementById('clock').textContent = time;
+    document.getElementById('date').textContent = date;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+<script>
+let scrollTimer;
+
+window.addEventListener("scroll", () => {
+    const clock = document.querySelector(".steam-clock");
+
+    clock.classList.add("scrolling");
+
+    clearTimeout(scrollTimer);
+
+    scrollTimer = setTimeout(() => {
+        clock.classList.remove("scrolling");
+    }, 300);
+});
+</script>
+<body>
+
+<header>
+    <h1>fikri</h1>
+    <p style="color: var(--brass)">murid smpit assyifa</p>
+    <img src="foto.jpg" alt="Foto Fikri" class="profile">
+</header>
+
+<nav>
+    <a href="#about">Identitas</a>
+    <a href="#projects">Proyek</a>
+    <a href="#contact">Akun</a>
+</nav>
+
+<div class="container">
+    
+    <section id="about">
+        <h2>Logbook: Identitas</h2>
+        <p>hanya seorang murid<i>SMPIT Assyifa Boarding School</i> kelas delapan dan menikuti organisasi <b>duta bahasa.</b></p>
+        <p><strong>Spesialisasi:</strong> 
+            <span style="color: var(--gear-blue)">menggambar dan bahasa inggris</span>
+        </p>
+    </section>
+<section id="organization">
+    <h2>Pengalaman Organisasi</h2>
+
+    <div class="org-card">
+        <img src="foto-duta-bahasa.jpg" alt="Kegiatan Duta Bahasa">
+
+        <div class="org-content">
+            <h3>Duta Bahasa</h3>
+            <p>
+                Aktif mengikuti organisasi <b>Duta Bahasa</b> sebagai sarana
+                mengembangkan kemampuan berbahasa, komunikasi, dan kerja sama tim.
+                Melalui kegiatan ini saya belajar mengenai penggunaan bahasa Inggris
+                yang baik dan benar serta meningkatkan kemampuan berbicara di depan umum.
+            </p>
+        </div>
+    </div>
+</section>
+    <section id="projects">
+        <h2>Proyek</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>pertemuan pertama</h3>
+                <p>Membuat teks perkenalan diri dengan agak "dramatis".</p>
+                <a href="#" class="btn">Buka</a>
+            </div>
+ <div class="project-card">
+                <h3>pertemuan kedua</h3>
+                <p>sama kayak pertemuan pertama, tapi yappingnya lebih banyak.</p>
+                <a href="#" class="btn">Buka</a>
+            </div>
+            <div class="project-card">
+                <h3>pertemuan ketiga</h3>
+                <p>bikin link buat masuk ke pertemuan pertama dan kedua.</p>
+                <a href="#" class="btn">Buka</a>
+            </div>
+                 <div class="project-card">
+                <h3>pertemuan keempat</h3>
+                <p>makanan dan minuman favorit saya.</p>
+                <a href="#" class="btn">Buka</a>
+            </div>       
+ <div class="project-card">
+                <h3>pertemuan kelima</h3>
+                <p>makanan dan minuman favorit teman saya.</p>
+                <a href="#" class="btn">Buka</a>
+            </div>     
+            
+        </div>
+    </section>
+
+    <section id="contact">
+       
+        <li>
+📟 <strong>Akun belajar:</strong>
+<a href="mailto:muhammad.fikri16947@smp.belajar.id">
+muhammad.fikri16947@smp.belajar.id
+</a>
+</li>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025-2026 | Ditenagai oleh ustadz cweto bolodiko</p>
+</footer>
+
+</body>
+</html>
