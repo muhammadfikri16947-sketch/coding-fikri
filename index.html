@@ -459,5 +459,49 @@ muhammad.fikri16947@smp.belajar.id
 
     </div>
 </div>
+    <div id="qiblaModal" class="qibla-modal">
+    <div class="qibla-box">
+        <button class="close-calculator"
+                onclick="closeQibla()">×</button>
+
+        <h2>🧭 ARAH KIBLAT</h2>
+        <p class="qibla-desc">
+            Penunjuk arah menuju Ka'bah
+        </p>
+
+        <div class="compass">
+            <span class="north">U</span>
+            <span class="east">T</span>
+            <span class="south">S</span>
+            <span class="west">B</span>
+
+            <div class="compass-inner">
+                <div id="qiblaNeedle" class="qibla-needle">
+                    ▲
+                </div>
+                <div class="compass-center">✦</div>
+            </div>
+        </div>
+
+        <div id="qiblaDegree" class="qibla-degree">
+            --°
+        </div>
+
+        <p id="qiblaStatus">
+            Tekan tombol di bawah untuk menentukan lokasi.
+        </p>
+
+        <button class="btn qibla-action"
+                onclick="findQibla()">
+            Tentukan Arah Kiblat
+        </button>
+
+        <p class="qibla-note">
+            Letakkan perangkat mendatar dan jauhkan dari
+            benda bermagnet. Akurasi bergantung pada sensor
+            kompas dan izin lokasi perangkat.
+        </p>
+    </div>
+</div>
 </body>
 </html>
